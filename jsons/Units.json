@@ -830,6 +830,20 @@
 		"attackSound": "shot"
 	},
 	{
+		"name": "British royal army",
+		"unitType": "Gunpowder",
+		"replaces": "Musketman",
+		"uniqueTo": "England",
+		"movement": 4,
+		"strength": 31,
+		"cost": 200,
+		"requiredTech": "Gunpowder",
+		"upgradesTo": "Rifleman",
+		"obsoleteTech": "Rifling",
+		"uniques": ["[+50]% Strength <vs [Siege] units>"],
+		"attackSound": "shot"
+	},
+	{
 		"name": "Janissary",
 		"unitType": "Gunpowder",
 		"replaces": "Musketman",
