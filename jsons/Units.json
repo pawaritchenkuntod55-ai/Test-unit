@@ -4,4 +4,16 @@
     "unitType": "range",
     "uniqueTo": "Siam",
     "replaces": "Machine Gun",
-    "
+    "movement": 2,
+    "strength": 10,
+    "rangedStrength": 12,
+    "cost": 75,
+    "requiredTech": "Constrution",
+    "obsoleteTech": "Manchinery",
+ // "uniques : [,],  
+ // "promotions : [],
+ // หมายเหตุแค่การทดสอบโปรดตรวจสอบโค้ดดีๆ
+    "upgaradesTo": "Crossbowman",
+    "attackSound": "Tank",
+  },
+]
