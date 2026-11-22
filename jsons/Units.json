@@ -1,7 +1,7 @@
 [
   {
     "name": "test",
-    "unitType": "Ranged",
+    "unitType": "Archery",
     "uniqueTo": "Siam",
     "replaces": "Composite Bowman",
     "movement": 2,
@@ -11,6 +11,6 @@
     "requiredTech": "Construction",
     "obsoleteTech": "Machinery",
     "upgradesTo": "Crossbowman",
-    "attackSound": "tank",
+    "attackSound": "shot"
   }
 ]
