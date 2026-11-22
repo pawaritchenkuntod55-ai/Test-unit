@@ -1766,5 +1766,23 @@
 		"requiredResource": "Aluminum",
 		"uniques": ["Spaceship part", "Cannot be purchased", "Only available <if [Apollo Program] is constructed>", "Uncapturable", "Can be added to [The Spaceship] in the Capital", "Limited to [1] per Civilization", "Only available <when [Scientific] Victory is enabled>"]
 		// costs 1500 in BNW
-	}
+	},
+  // mod
+    {
+	    "name": "Flamethower"
+		"unitType": "Melee",
+		"uniqueTo": "Germany",
+		"movement": 2,
+		"strength": 72,
+		"cost": 355,
+		"requiredTech": "Replaceable Parts",
+		"requiredResource": "Oil",
+	    "upgradesTo": "Mechanized Infantry",
+		"obsoleteTech": "Mobile Tactics",
+		"uniques": ["[-20]% Strength <when fighting in [Jungle] tiles>",
+		            "[-20]% Strength <when fighting in [Forest] tiles>",
+		            "[-10]% Strength <when fighting in [Hill] tiles>"],
+		"attackSound": "tankshot"
+		//German unique unit, stronger than gunpowder
+	}	
 ]
