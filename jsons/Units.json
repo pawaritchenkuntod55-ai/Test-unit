@@ -1784,5 +1784,21 @@
 		            "[-10]% Strength <when fighting in [Hill] tiles>"],
 		"attackSound": "tankshot"
 		//German unique unit, stronger than gunpowder
-	}	
+	},	
+	{
+		"name": "Royal navy",
+		"unitType": "Ranged Water",
+		"uniqueTo": "England"
+		"movement": 7,
+		"strength": 60,
+		"rangedStrength": 51,
+		"range": 3,
+		"cost": 400,
+		"requiredResource": "Oil",
+		"requiredTech": "Electronics",
+		"uniques": ["Never appears as a Barbarian unit"],
+		"promotions": ["Indirect Fire"],
+		"attackSound": "shipguns"
+		// Does not actually upgrade to Missile Cruisers
+	},
 ]
