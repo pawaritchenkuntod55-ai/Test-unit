@@ -1,0 +1,38 @@
+name: CI
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  unciv-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: 17
+
+      - name: Clean old atlas
+        run: rm -f game.atlas game.png AbsoluteUnits.atlas AbsoluteUnits.png
+
+      - name: Autoupdate
+        continue-on-error: true
+        run: |
+          unciv_url=$(curl -s https://api.github.com/repos/yairm210/unciv/releases/latest | grep -o "http.*Unciv.jar")
+          wget -q -O Unciv.jar $unciv_url
+          java -jar Unciv.jar mod-ci
+
+      - name: Remove Unciv executable
+        run: rm Unciv.jar
+
+      - name: Commit changes
+        run: |
+          git config user.email "action@github.com"
+          git config user.name "GitHub Action"
+          git add .
+          git commit -m "Auto-generate atlas" || echo "No changes"
+          git push
