@@ -27,7 +27,7 @@ jobs:
           java -jar Unciv.jar mod-ci
 
       - name: Remove Unciv executable
-        run: rm Unciv.jar
+        run: rm -f Unciv.jar
 
       - name: Commit changes
         run: |
