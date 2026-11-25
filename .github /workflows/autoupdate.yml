@@ -1,0 +1,45 @@
+name: CI
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+# Needed so the final step can push the generated atlas back to the repo
+permissions:
+  contents: write
+
+jobs:
+  unciv-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: 17
+
+      # Only remove the atlas this mod actually generates
+      - name: Clean old atlas
+        run: rm -f game.atlas game.png
+
+      # No continue-on-error: if the download or packing fails, the job stops
+      # here and does NOT commit a repo with the atlas deleted.
+      - name: Autoupdate
+        run: |
+          unciv_url=$(curl -s -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" https://api.github.com/repos/yairm210/unciv/releases/latest | grep -o "https[^\"]*Unciv.jar" | head -n 1)
+          echo "Downloading: $unciv_url"
+          wget -q -O Unciv.jar "$unciv_url"
+          java -jar Unciv.jar mod-ci
+
+      - name: Remove Unciv executable
+        run: rm -f Unciv.jar
+
+      - name: Commit changes
+        run: |
+          git config user.email "action@github.com"
+          git config user.name "GitHub Action"
+          git add .
+          git commit -m "Auto-generate atlas" || echo "No changes"
+          git push
