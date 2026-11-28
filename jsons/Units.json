@@ -1813,4 +1813,18 @@
 		"upgradesTo": "Great War Infantry",
 		"attackSound": "shot" 
 		},
+     {
+		"name": "Torpedo Bomber",
+		"unitType": "Bomber",
+		"movement": 1,
+		"strength": 50,
+		"rangedStrength": 50,
+		"range": 10,
+		"cost": 300,
+		"requiredTech": "Radar",
+		"requiredResource": "Oil",
+		"uniques": ["[+150]% Strength <vs [Water] units>"],
+		 "upgradesTo": "Stealth Bomber",
+		"attackSound": "bombing"
+	},
 ]
