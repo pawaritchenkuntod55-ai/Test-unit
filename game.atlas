@@ -1,20 +1,27 @@
 
 game.png
-size: 256, 128
+size: 512, 128
 format: RGBA8888
 filter: MipMapLinearLinear, MipMapLinearLinear
 repeat: none
 TileSets/AbsoluteUnits/Units/British colonial Forces
   rotate: false
-  xy: 4, 4
+  xy: 112, 23
   size: 95, 81
   orig: 95, 81
   offset: 0, 0
   index: -1
 TileSets/AbsoluteUnits/Units/Royal navy
   rotate: false
-  xy: 107, 29
+  xy: 215, 48
   size: 64, 56
   orig: 64, 56
+  offset: 0, 0
+  index: -1
+UnitIcons/Torpedo Bomber
+  rotate: false
+  xy: 4, 4
+  size: 100, 100
+  orig: 100, 100
   offset: 0, 0
   index: -1
